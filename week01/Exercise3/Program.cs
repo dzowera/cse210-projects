@@ -8,13 +8,10 @@ class Program
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
         Console.WriteLine();
 
-        string response = "eya";
-
-        while (response == "eya")
-        {
-            Console.Write("Ukufuna usewereso?: ");
-            response = Console.ReadLine();
-        }
+        Random random = new Random();
+        int i = random.Next(0, 10);
+        Console.WriteLine(i);
+        
 
     }
 }
