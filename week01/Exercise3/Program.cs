@@ -8,29 +8,31 @@ class Program
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
         Console.WriteLine();
 
-        Console.Write("what is your magic number");
-        int magic_number = int.Parse(Console.ReadLine());
-
-        Console.Write("what is your guess");
-        int guess = int.Parse(Console.ReadLine());
-
-        if (magic_number > guess)
+        string response;
+        do
         {
-            Console.WriteLine("Higher");
-        }
+            Console.Write("What is your magic number? ");
+            int magic_number = int.Parse(Console.ReadLine());
 
-        else if (magic_number < guess)
-        {
-            Console.WriteLine("Lower");
-        }
+            Console.Write("What is your guess? ");
+            int guess = int.Parse(Console.ReadLine());
 
-        else
-        {
-            Console.WriteLine("Your guess is write.")
-        }
+            if (magic_number > guess)
+            {
+                Console.WriteLine("Higher");
+            }
+            else if (magic_number < guess)
+            {
+                Console.WriteLine("Lower");
+            }
+            else
+            {
+                Console.WriteLine("Your guess is right.");
+                Console.Write("Do you want to continue? ");
+                response = Console.ReadLine();
+            }
 
-       
-        
+        } while (response == "yes");
 
     }
 }
