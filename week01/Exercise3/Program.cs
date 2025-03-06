@@ -8,7 +8,8 @@ class Program
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
         Console.WriteLine();
 
-        string response;
+        string response = "";
+        int number = 0;
         do
         {
             Console.Write("What is your magic number? ");
@@ -28,6 +29,8 @@ class Program
             else
             {
                 Console.WriteLine("Your guess is right.");
+                number++;
+                Console.WriteLine($"you have guessed it {number} times");
                 Console.Write("Do you want to continue? ");
                 response = Console.ReadLine();
             }
