@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic; // Needed for List<T>
 
 class Program
 {
@@ -6,36 +7,58 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Resumes Project.");
 
-        Book book = new Book();
+        // Create the first job
+        Job job1 = new Job();
+        job1._jobTitle = "Software Engineer";
+        job1._company = "Microsoft";
+        job1._startYear = 2019;
+        job1._endYear = 2022;
 
-        book._tittle = "Jungle Book";
-        book._author = "Leonardo da Vinci";
-        book._year = "2020";
+        // Create the second job
+        Job job2 = new Job();
+        job2._jobTitle = "Manager";
+        job2._company = "Apple";
+        job2._startYear = 2022;
+        job2._endYear = 2023;
 
-        // call what to be displayed
+        // Create the resume
+        Resume myResume = new Resume();
+        myResume._name = "Allison Rose";
+        myResume._jobs.Add(job1); // Add the first job
+        myResume._jobs.Add(job2); // Add the second job
 
-        book.ShowDetails();
-
+        // Display the resume
+        myResume.Display();
     }
 }
 
-public class Book 
+public class Job
 {
-    // the variables
-    public string _tittle = "";
-    public string _author = "";
+    public string _jobTitle;
+    public string _company;
+    public int _startYear;
+    public int _endYear;
 
-    public string _year = "";
-
-    // how do you make the int variable?
-
-// the line below is used for what? separate the variables and responsibilities?
-    public Book () 
+    // Method to display job details
+    public void Display()
     {
+        Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
     }
+}
 
-    public void ShowDetails()
+public class Resume
+{
+    public string _name; // Name of the person
+    public List<Job> _jobs = new List<Job>(); // A list to hold jobs
+
+    // Method to display the resume details
+    public void Display()
     {
-        Console.WriteLine ($"{tittle} by {author}, published in the year {year}");
+        Console.WriteLine($"Name: {_name}");
+        Console.WriteLine("Jobs:");
+        foreach (Job job in _jobs)
+        {
+            job.Display(); // Call the Display method of each Job
+        }
     }
 }
