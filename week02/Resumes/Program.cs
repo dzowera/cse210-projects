@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic; // Needed for List<T>
+using System.Collections.Generic;
 
 class Program
 {
