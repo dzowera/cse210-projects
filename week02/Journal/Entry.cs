@@ -8,7 +8,7 @@ public class Entry
 
     public Entry()
     {
-        // Empty constructor (you can add initialization later)
+
     }
 
     public override string ToString()
